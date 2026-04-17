@@ -1,7 +1,6 @@
-﻿   using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace my_game
 {
@@ -9,18 +8,29 @@ namespace my_game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        private Texture2D _squreTexture;
+        private Texture2D _squareTexture;
         private Vector2 _playerPosition;
+        private Vector2 _playerSize;
+        private float _ground;
+
+        private Player _player;
+
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+
+            _graphics.PreferredBackBufferWidth = 1280;
+            _graphics.PreferredBackBufferHeight = 800;
+
+            _player = new Player(); 
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            _playerSize = new Vector2(40, 65);
+            _ground = 400;
 
             base.Initialize();
         }
@@ -29,15 +39,14 @@ namespace my_game
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            _squreTexture = new Texture2D(GraphicsDevice, 1, 1);
-            _squreTexture.SetData(new[] { Color.White });               
-
-            // TODO: use this.Content to load your game content here
+            _squareTexture = new Texture2D(GraphicsDevice, 1, 1);
+            _squareTexture.SetData(new[] { Color.Beige });
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
+                || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
@@ -45,21 +54,15 @@ namespace my_game
                 _playerPosition.X--;
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 _playerPosition.X++;
             }
 
-            _playerPosition.Y++;
-
-            _playerPosition.Y--;
-
-
-            if(_playerPosition.Y <200  0)
-
-
-
-            // TODO: Add your update logic here
+            if (_playerPosition.Y <( _ground - _playerSize.Y))
+            {
+                _playerPosition.Y++;
+            }
 
             base.Update(gameTime);
         }
@@ -70,12 +73,27 @@ namespace my_game
 
             _spriteBatch.Begin();
 
-            _spriteBatch.Draw(_squreTexture,new Rectangle(_playerPositionX,_playerPositionX,_playerPositionY,_playerPositionY),Color.Beige);
+            _spriteBatch.Draw(
+                _squareTexture,
+                new Rectangle(
+                    (int)_playerPosition.X,
+                    (int)_playerPosition.Y,
+                    (int)_playerSize.X,
+                    (int)_playerSize.Y),
+                Color.Beige);
 
-            _squreTexture.End();
+            _spriteBatch.Draw(
+                _squareTexture,
+                new Rectangle(
+                    0,
+                    (int)_ground ,
+                    100,
+                    100
+                ),
+                Color.DarkRed
+            );
 
-
-            // TODO: Add your drawing code here
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
