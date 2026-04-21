@@ -1,26 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
 
-namespace my_game
+public class Player
+
 {
-    public class Player 
+    private float _movementSpeed;
+
+    public Vector2 Position;
+    public Vector2 Size;
+
+    public Player(Vector2 position, Vector2 size)
     {
-        public Vector2 Position;
-        public Vector2 Size;
-        public Player(Vector2 position,Vector2 size) 
-        {
-            Position = Position;
-            Size = Size;
-        }
+        Position = position;
+        Size = size;
 
-        public void Draw()
-        {
+        _movementSpeed = 3;
+    }
 
-        }
+    public void Draw()
+    {
 
     }
+
+    public void Move(Vector2 step, float deltaTime)
+    {
+        step.Normalize();
+
+        Position += step * _movementSpeed * deltaTime; ;
+    }
+
 }
