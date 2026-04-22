@@ -16,7 +16,7 @@ public class Player
         Position = position;
         Size = size;
 
-        _movementSpeed = 3;
+        _movementSpeed = 300;
     }
 
     public void Draw()
@@ -26,9 +26,11 @@ public class Player
 
     public void Move(Vector2 step, float deltaTime)
     {
-        step.Normalize();
+        if(step == Vector2.Zero) 
+            return;
 
-        Position += step * _movementSpeed * deltaTime; ;
+        step.Normalize();
+        Position += step * _movementSpeed * deltaTime;
     }
 
 }

@@ -9,9 +9,8 @@ public class Game1 : Game
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
     private Texture2D _squareTexture;
-    private Vector2 _playerPosition;
-    private Vector2 _playerSize;
     private float _ground;
+    private float _jumpTimer;
 
     private Player _player;
 
@@ -31,11 +30,11 @@ public class Game1 : Game
     protected override void Initialize()
     {
         _player = new Player(
-            new Vector2(100, 100),
+            new Vector2(50, 335),
             new Vector2(40, 65)
             );
 
-        _playerSize = new Vector2(40, 65);
+        _jumpTimer = 0;
         _ground = 400;
 
         base.Initialize();
@@ -51,6 +50,7 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
+        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; 
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
             || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
@@ -62,27 +62,21 @@ public class Game1 : Game
         }
         if (Keyboard.GetState().IsKeyDown(Keys.D))
         {
-            direction.X = -1;
+            direction.X = 1; 
         }
-        if (Keyboard.GetState().IsKeyDown(Keys.W))
+        if (Keyboard.GetState().IsKeyDown(Keys.Space) && (_jumpTimer <= 0))
         {
-            direction.Y = -1;
-        }
-        if (Keyboard.GetState().IsKeyDown(Keys.S))
-        {
-            direction.Y = -1;
+            direction.Y = -400;
+            _jumpTimer = 1;
         }
 
-        _player.Move(direction);
-
-        if (Keyboard.GetState().IsKeyDown(Keys.A))
-        {
-            _player.Position.X--;
-        }
+        _player.Move(direction, deltaTime);
         if (_player.Position.Y < (_ground - _player.Size.Y))
         {
             _player.Position.Y++;
         }
+        if (_jumpTimer >= 0)
+            _jumpTimer -= deltaTime;
 
         base.Update(gameTime);
     }
