@@ -14,6 +14,8 @@ public class Game1 : Game
 
     private Player _player;
 
+    private Texture2D _background;
+
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
@@ -43,6 +45,8 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        _background = Content.Load<Texture2D>("images/background");
 
         _squareTexture = new Texture2D(GraphicsDevice, 1, 1);
         _squareTexture.SetData(new[] { Color.Beige });
@@ -87,6 +91,8 @@ public class Game1 : Game
 
         _spriteBatch.Begin();
 
+        _spriteBatch.Draw(_background, Vector2.Zero, Color.White);
+
         _spriteBatch.Draw(
             _squareTexture,
             new Rectangle(
@@ -95,12 +101,6 @@ public class Game1 : Game
                 (int)_player.Size.X,
                 (int)_player.Size.Y),
             Color.Beige);
-
-        _spriteBatch.Draw(
-            _squareTexture,
-            new Rectangle(0, (int)_ground, 100, 100),
-            Color.DarkRed
-        );
 
         _spriteBatch.End();
 

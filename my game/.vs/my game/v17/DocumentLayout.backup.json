@@ -30,8 +30,7 @@
               "RelativeToolTip": "my game\\Player.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwBIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T06:02:57.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T06:02:57.623Z"
             },
             {
               "$type": "Document",
@@ -39,12 +38,11 @@
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\first-game\\my game\\my game\\Game1.cs",
               "RelativeDocumentMoniker": "my game\\Game1.cs",
-              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\first-game\\my game\\my game\\Game1.cs*",
-              "RelativeToolTip": "my game\\Game1.cs*",
-              "ViewState": "AgIAABIAAAAAAAAAAAAmwCAAAAAgAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\first-game\\my game\\my game\\Game1.cs",
+              "RelativeToolTip": "my game\\Game1.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwCAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T05:47:12.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-22T05:47:12.703Z"
             }
           ]
         }

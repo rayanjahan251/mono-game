@@ -32,3 +32,4 @@ C:\Users\Student\Documents\GitHub\first-game\my game\my game\obj\Debug\net9.0\re
 C:\Users\Student\Documents\GitHub\first-game\my game\my game\obj\Debug\net9.0\my game.pdb
 C:\Users\Student\Documents\GitHub\first-game\my game\my game\obj\Debug\net9.0\my game.genruntimeconfig.cache
 C:\Users\Student\Documents\GitHub\first-game\my game\my game\obj\Debug\net9.0\ref\my game.dll
+C:\Users\Student\Documents\GitHub\first-game\my game\my game\bin\Debug\net9.0\Content\images\background.xnb
