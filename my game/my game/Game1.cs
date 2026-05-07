@@ -37,7 +37,7 @@ public class Game1 : Game
             );
 
         _jumpTimer = 0;
-        _ground = 400;
+        _ground = 760;
 
         base.Initialize();
     }
@@ -55,20 +55,23 @@ public class Game1 : Game
     protected override void Update(GameTime gameTime)
     {
         float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; 
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
-            || Keyboard.GetState().IsKeyDown(Keys.Escape))
+        GamePadState gamePad = GamePad.GetState (PlayerIndex.One);
+        KeyboardState keyboard = Keyboard.GetState();
+
+        if (gamePad.Buttons.Back == ButtonState.Pressed
+            || keyboard.IsKeyDown(Keys.Escape))
             Exit();
 
         Vector2 direction = new Vector2();
-        if (Keyboard.GetState().IsKeyDown(Keys.A))
+        if (keyboard.IsKeyDown(Keys.A))
         {
             direction.X = -1;
         }
-        if (Keyboard.GetState().IsKeyDown(Keys.D))
+        if (keyboard.IsKeyDown(Keys.D))
         {
             direction.X = 1; 
         }
-        if (Keyboard.GetState().IsKeyDown(Keys.Space) && (_jumpTimer <= 0))
+        if (keyboard.IsKeyDown(Keys.Space) && (_jumpTimer <= 0))
         {
             direction.Y = -400;
             _jumpTimer = 1;
