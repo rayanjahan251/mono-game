@@ -77,7 +77,8 @@ public class Game1 : Game
             _jumpTimer = 1;
         }
 
-        _player.Move(direction, deltaTime);
+        _player.Update(deltaTime);
+        _player.SetDirection(direction);
         if (_player.Position.Y < (_ground - _player.Size.Y))
         {
             _player.Position.Y++;

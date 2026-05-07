@@ -6,10 +6,14 @@ using System.Diagnostics;
 public class Player
 
 {
+    private const  float _gravity = 98;
+
     private float _movementSpeed;
 
     public Vector2 Position;
     public Vector2 Size;
+
+    private Vector2 _velocity;
 
     public Player(Vector2 position, Vector2 size)
     {
@@ -19,18 +23,22 @@ public class Player
         _movementSpeed = 300;
     }
 
+    public void Update (float deltaTime)
+    {
+        _velocity.Y += _gravity;
+
+        Position.X += _velocity * _movementSpeed * deltaTime;
+        Position.Y+= _velocity *_gravity * deltaTime;
+
+    }
+
     public void Draw()
     {
 
     }
 
-    public void Move(Vector2 step, float deltaTime)
+    public void SetDirection(Vector2 direction)
     {
-        if(step == Vector2.Zero) 
-            return;
-
-        step.Normalize();
-        Position += step * _movementSpeed * deltaTime;
+        _velocity.X += direction.X;
     }
-
 }
