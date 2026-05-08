@@ -10,20 +10,28 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
     private Texture2D _squareTexture;
     private float _ground;
-    private float _jumpTimer;
 
     private Player _player;
 
     private Texture2D _background;
 
+    private Rectangle[] _platforms; 
+
     public Game1()
     {
+        
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
 
         _graphics.PreferredBackBufferWidth = 1280;
         _graphics.PreferredBackBufferHeight = 800;
+
+        _platforms = new  Rectangle[3];
+        _platforms[0] = new Rectangle(200, 620, 150, 20);
+        _platforms[1] = new Rectangle(400, 520, 150, 20);
+        _platforms[2] = new Rectangle(600, 420, 150, 20);
+        
     }
 
     protected override void Initialize()
@@ -33,7 +41,6 @@ public class Game1 : Game
             new Vector2(40, 65)
             );
 
-        _jumpTimer = 0;
         _ground = 760;
 
         base.Initialize();
@@ -79,8 +86,6 @@ public class Game1 : Game
         {
             _player.Position.Y++;
         }
-        if (_jumpTimer >= 0)
-            _jumpTimer -= deltaTime;
 
         if ((_player.Position.Y + _player.Size.Y) >= _ground)
         {
@@ -98,6 +103,11 @@ public class Game1 : Game
         _spriteBatch.Begin();
 
         _spriteBatch.Draw(_background, Vector2.Zero, Color.White);
+
+        for (int i = 0; i < _platforms.Length; ++i)
+        {
+            _spriteBatch.Draw(_squareTexture, _platforms[i], Color.RosyBrown);
+        }
 
         _spriteBatch.Draw(
             _squareTexture,
