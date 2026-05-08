@@ -24,9 +24,6 @@ public class Game1 : Game
 
         _graphics.PreferredBackBufferWidth = 1280;
         _graphics.PreferredBackBufferHeight = 800;
-
-
-        
     }
 
     protected override void Initialize()
@@ -54,8 +51,8 @@ public class Game1 : Game
 
     protected override void Update(GameTime gameTime)
     {
-        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; 
-        GamePadState gamePad = GamePad.GetState (PlayerIndex.One);
+        float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+        GamePadState gamePad = GamePad.GetState(PlayerIndex.One);
         KeyboardState keyboard = Keyboard.GetState();
 
         if (gamePad.Buttons.Back == ButtonState.Pressed
@@ -69,12 +66,11 @@ public class Game1 : Game
         }
         if (keyboard.IsKeyDown(Keys.D))
         {
-            direction.X = 1; 
+            direction.X = 1;
         }
-        if (keyboard.IsKeyDown(Keys.Space) && (_jumpTimer <= 0))
+        if (keyboard.IsKeyDown(Keys.Space) && (_player.Velocity.Y == 0))
         {
-            direction.Y = -400;
-            _jumpTimer = 1;
+            _player.Jump();
         }
 
         _player.Update(deltaTime);
@@ -85,6 +81,12 @@ public class Game1 : Game
         }
         if (_jumpTimer >= 0)
             _jumpTimer -= deltaTime;
+
+        if ((_player.Position.Y + _player.Size.Y) >= _ground)
+        {
+            _player.Velocity.Y = 0;
+            _player.Position.Y = _ground - _player.Size.Y;
+        }
 
         base.Update(gameTime);
     }

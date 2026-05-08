@@ -6,14 +6,15 @@ using System.Diagnostics;
 public class Player
 
 {
-    private const  float _gravity = 98;
+    private const float _gravity = 9.8f;
+    private const float _jumpForce = 500f;
 
     private float _movementSpeed;
 
     public Vector2 Position;
     public Vector2 Size;
 
-    private Vector2 _velocity;
+    public Vector2 Velocity;
 
     public Player(Vector2 position, Vector2 size)
     {
@@ -23,15 +24,18 @@ public class Player
         _movementSpeed = 300;
     }
 
-    public void Update (float deltaTime)
+    public void Update(float deltaTime)
     {
-        _velocity.Y += _gravity;
+        Velocity.Y += _gravity;
 
-        Position.X += _velocity * _movementSpeed * deltaTime;
-        Position.Y+= _velocity *_gravity * deltaTime;
+        Position.X += Velocity.X * _movementSpeed * deltaTime;
+        Position.Y += Velocity.Y * deltaTime;
 
     }
-
+    public void Jump()
+     {
+        Velocity.Y -= _jumpForce;
+     }
     public void Draw()
     {
 
@@ -39,6 +43,6 @@ public class Player
 
     public void SetDirection(Vector2 direction)
     {
-        _velocity.X += direction.X;
+        Velocity.X = direction.X;
     }
 }
