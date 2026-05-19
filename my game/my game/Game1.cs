@@ -31,7 +31,6 @@ public class Game1 : Game
         _platforms[0] = new Rectangle(200, 620, 150, 20);
         _platforms[1] = new Rectangle(400, 520, 150, 20);
         _platforms[2] = new Rectangle(600, 420, 150, 20);
-        
     }
 
     protected override void Initialize()
@@ -92,6 +91,8 @@ public class Game1 : Game
             _player.Velocity.Y = 0;
             _player.Position.Y = _ground - _player.Size.Y;
         }
+        
+        ResolveCollisions();
 
         base.Update(gameTime);
     }
@@ -109,6 +110,8 @@ public class Game1 : Game
             _spriteBatch.Draw(_squareTexture, _platforms[i], Color.RosyBrown);
         }
 
+        _player.Draw(_spriteBatch);
+
         _spriteBatch.Draw(
             _squareTexture,
             new Rectangle(
@@ -121,5 +124,43 @@ public class Game1 : Game
         _spriteBatch.End();
 
         base.Draw(gameTime);
+    }
+
+    private void ResolveCollisions()
+    {
+        for (int i = 0; i < _platforms.Length; i++)
+        {
+            bool isCollidingLeft = (_player.Position.X + _player.Size.X)
+                > _platforms[i].Left;
+            bool isCollidingTop = (_player.Position.Y + _player.Size.Y)
+                > _platforms[i].Top;
+            bool isCollidingRight = _player.Position.X < _platforms[i].Right;
+            bool isCollidingBottom = _player.Position.Y
+                < _platforms[i].Bottom;
+            bool isColliding = isCollidingLeft
+                && isCollidingTop
+                && isCollidingRight
+                && isCollidingBottom;
+
+            if (isColliding)
+            {
+                if ((isCollidingLeft || isCollidingRight)
+                    && (!isCollidingTop && !isCollidingBottom))
+                {
+                    _player.Velocity.X *= -1;
+                }
+
+                if (isCollidingBottom)
+                {
+                    _player.Velocity.Y *= -1;
+                }
+
+                if (isCollidingTop)
+                {
+                    _player.Velocity.Y = 0;
+                    _player.Position.Y = _platforms[i].Top - _player.Size.Y;
+                }
+            }
+        }
     }
 }

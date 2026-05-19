@@ -36,7 +36,7 @@ public class Player
      {
         Velocity.Y -= _jumpForce;
      }
-    public void Draw()
+    public void Draw(SpriteBatch spriteBatch)
     {
 
     }
