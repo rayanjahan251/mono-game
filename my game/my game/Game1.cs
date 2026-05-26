@@ -75,7 +75,7 @@ public class Game1 : Game
 
         Vector2 direction = new Vector2();
         if (keyboard.IsKeyDown(Keys.A))
-        {
+        {       
             direction.X = -1;
         }
         if (keyboard.IsKeyDown(Keys.D))
@@ -101,12 +101,7 @@ public class Game1 : Game
         }
 
         _enemy.Update(deltaTime);
-  
-        if (_enemy.Position.Y < (_ground - _enemy.Size.Y))
-        {
-            _enemy.Position.Y++;
-        }
-
+ 
         if ((_enemy.Position.Y + _enemy.Size.Y) >= _ground)
         {
             _enemy.Velocity.Y = 0;
