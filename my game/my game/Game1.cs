@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using my_game;
 
 namespace first_game;
 
@@ -15,8 +16,9 @@ public class Game1 : Game
 
     private Texture2D _background;
 
-    private Rectangle[] _platforms; 
+    private Rectangle[] _platforms;
 
+    private Enemy _enemy;
     public Game1()
     {
         
@@ -43,7 +45,13 @@ public class Game1 : Game
         _ground = 760;
 
         base.Initialize();
+
+        _enemy = new Enemy
+            (new Vector2(500, 400),
+            new Vector2(40, 65)
+            );
     }
+
 
     protected override void LoadContent()
     {
@@ -91,7 +99,20 @@ public class Game1 : Game
             _player.Velocity.Y = 0;
             _player.Position.Y = _ground - _player.Size.Y;
         }
-        
+
+        _enemy.Update(deltaTime);
+  
+        if (_enemy.Position.Y < (_ground - _enemy.Size.Y))
+        {
+            _enemy.Position.Y++;
+        }
+
+        if ((_enemy.Position.Y + _enemy.Size.Y) >= _ground)
+        {
+            _enemy.Velocity.Y = 0;
+            _enemy.Position.Y = _ground - _enemy.Size.Y;
+        }
+
         ResolveCollisions();
 
         base.Update(gameTime);
@@ -120,6 +141,19 @@ public class Game1 : Game
                 (int)_player.Size.X,
                 (int)_player.Size.Y),
             Color.Beige);
+
+        _enemy.Draw(_spriteBatch);
+
+        _spriteBatch.Draw(
+        _squareTexture,
+            new Rectangle(
+                (int)_enemy.Position.X,
+                (int)_enemy.Position.Y,
+                (int)_enemy.Size.X,
+                (int)_enemy.Size.Y),
+            Color.Red);
+                
+                
 
         _spriteBatch.End();
 
