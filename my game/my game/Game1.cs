@@ -29,10 +29,12 @@ public class Game1 : Game
         _graphics.PreferredBackBufferWidth = 1280;
         _graphics.PreferredBackBufferHeight = 800;
 
-        _platforms = new  Rectangle[3];
+        _platforms = new  Rectangle[5];
         _platforms[0] = new Rectangle(200, 620, 150, 20);
         _platforms[1] = new Rectangle(400, 520, 150, 20);
         _platforms[2] = new Rectangle(600, 420, 150, 20);
+        _platforms[3] = new Rectangle(200, 320, 150, 20);
+        _platforms[4] = new Rectangle(600, 220, 150, 20);
     }
 
     protected override void Initialize()
