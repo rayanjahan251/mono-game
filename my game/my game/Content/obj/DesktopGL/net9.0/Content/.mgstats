@@ -1,2 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/images/Gemini_Generated_Image_sywmjisywmjisywm.png","C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/bin/DesktopGL/Content/images/background.xnb","TextureProcessor","Texture2DContent",2795445,4325461,0.5123284
+"C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/images/Gemini_Generated_Image_sywmjisywmjisywm.png","C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/bin/DesktopGL/Content/images/background.xnb","TextureProcessor","Texture2DContent",2795445,4325461,0.4223722
+"C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/main-character-sqr.png","C:/Users/Student/Documents/GitHub/mono-game/my game/my game/Content/bin/DesktopGL/Content/main-character-sqr.xnb","TextureProcessor","Texture2DContent",207114,3327061,0.3398164

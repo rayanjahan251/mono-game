@@ -1,7 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.Diagnostics;
 
 public class Player
 
@@ -10,6 +8,7 @@ public class Player
     private const float _jumpForce = 500f;
 
     private float _movementSpeed;
+    private Texture2D _texture;
 
     public Vector2 Position;
     public Vector2 Size;
@@ -23,6 +22,12 @@ public class Player
 
         _movementSpeed = 300;
     }
+
+    public void LoadContent(Texture2D texture)
+    { 
+        _texture = texture;
+    }
+
 
     public void Update(float deltaTime)
     {
@@ -38,7 +43,14 @@ public class Player
      }
     public void Draw(SpriteBatch spriteBatch)
     {
-
+        spriteBatch.Draw(
+            _texture,
+            new Rectangle(
+                (int)Position.X,
+                (int)Position.Y,
+                (int)Size.X,
+                (int)Size.Y),
+            Color.Beige);
     }
 
     public void SetDirection(Vector2 direction)

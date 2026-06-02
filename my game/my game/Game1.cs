@@ -41,7 +41,7 @@ public class Game1 : Game
     {
         _player = new Player(
             new Vector2(50, 335),
-            new Vector2(40, 65)
+            new Vector2(90, 90)
             );
 
         _ground = 760;
@@ -63,6 +63,9 @@ public class Game1 : Game
 
         _squareTexture = new Texture2D(GraphicsDevice, 1, 1);
         _squareTexture.SetData(new[] { Color.Beige });
+
+        Texture2D playerTexture = Content.Load<Texture2D>("main-character-sqr");
+        _player.LoadContent(playerTexture);
     }
 
     protected override void Update(GameTime gameTime)
@@ -129,16 +132,6 @@ public class Game1 : Game
         }
 
         _player.Draw(_spriteBatch);
-
-        _spriteBatch.Draw(
-            _squareTexture,
-            new Rectangle(
-                (int)_player.Position.X,
-                (int)_player.Position.Y,
-                (int)_player.Size.X,
-                (int)_player.Size.Y),
-            Color.Beige);
-
         _enemy.Draw(_spriteBatch);
 
         _spriteBatch.Draw(

@@ -25,3 +25,15 @@
 /processorParam:TextureFormat=Color
 /build:images/Gemini_Generated_Image_sywmjisywmjisywm.png;images/background.png
 
+#begin main-character-sqr.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:main-character-sqr.png
+
