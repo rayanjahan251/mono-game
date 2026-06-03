@@ -15,6 +15,7 @@ public class Game1 : Game
     private Player _player;
 
     private Texture2D _background;
+    private Texture2D _platform;
 
     private Rectangle[] _platforms;
 
@@ -30,11 +31,11 @@ public class Game1 : Game
         _graphics.PreferredBackBufferHeight = 800;
 
         _platforms = new  Rectangle[5];
-        _platforms[0] = new Rectangle(200, 620, 150, 20);
-        _platforms[1] = new Rectangle(400, 520, 150, 20);
-        _platforms[2] = new Rectangle(600, 420, 150, 20);
-        _platforms[3] = new Rectangle(200, 320, 150, 20);
-        _platforms[4] = new Rectangle(600, 220, 150, 20);
+        _platforms[0] = new Rectangle(200, 620, 150, 50);
+        _platforms[1] = new Rectangle(400, 520, 150, 50);
+        _platforms[2] = new Rectangle(600, 420, 150, 50);
+        _platforms[3] = new Rectangle(200, 320, 150, 50);
+        _platforms[4] = new Rectangle(600, 220, 150, 50);
     }
 
     protected override void Initialize()
@@ -66,6 +67,8 @@ public class Game1 : Game
 
         Texture2D playerTexture = Content.Load<Texture2D>("main-character-sqr");
         _player.LoadContent(playerTexture);
+
+        _platform = Content.Load<Texture2D>("images/platforms");
     }
 
     protected override void Update(GameTime gameTime)
@@ -128,7 +131,7 @@ public class Game1 : Game
 
         for (int i = 0; i < _platforms.Length; ++i)
         {
-            _spriteBatch.Draw(_squareTexture, _platforms[i], Color.RosyBrown);
+            _spriteBatch.Draw(_platform, _platforms[i], Color.RosyBrown);
         }
 
         _player.Draw(_spriteBatch);

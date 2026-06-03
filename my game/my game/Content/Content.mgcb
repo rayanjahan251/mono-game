@@ -25,6 +25,18 @@
 /processorParam:TextureFormat=Color
 /build:images/Gemini_Generated_Image_sywmjisywmjisywm.png;images/background.png
 
+#begin images/Screenshot_2026-06-03_092648-removebg-preview.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:images/Screenshot_2026-06-03_092648-removebg-preview.png;images/platforms.png
+
 #begin main-character-sqr.png
 /importer:TextureImporter
 /processor:TextureProcessor
