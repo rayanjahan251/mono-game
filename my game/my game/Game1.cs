@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using my_game;
+using System.Reflection.Metadata.Ecma335;
 
 namespace first_game;
 
@@ -157,37 +158,45 @@ public class Game1 : Game
     {
         for (int i = 0; i < _platforms.Length; i++)
         {
-            bool isCollidingLeft = (_player.Position.X + _player.Size.X)
-                > _platforms[i].Left;
-            bool isCollidingTop = (_player.Position.Y + _player.Size.Y)
-                > _platforms[i].Top;
-            bool isCollidingRight = _player.Position.X < _platforms[i].Right;
-            bool isCollidingBottom = _player.Position.Y
-                < _platforms[i].Bottom;
-            bool isColliding = isCollidingLeft
-                && isCollidingTop
-                && isCollidingRight
-                && isCollidingBottom;
-
-            if (isColliding)
+            Vector2 collisionData = GetCollisionData(_player.Collider, _platforms[i]);
+            if (collisionData == Vector2.Zero)
+                continue;
+            _player.Position += collisionData;
+            if(collisionData.X != 0)
             {
-                if ((isCollidingLeft || isCollidingRight)
-                    && (!isCollidingTop && !isCollidingBottom))
-                {
-                    _player.Velocity.X *= -1;
-                }
-
-                if (isCollidingBottom)
-                {
-                    _player.Velocity.Y *= -1;
-                }
-
-                if (isCollidingTop)
+                _player.Velocity.X = 0;
+            }
+            else
+            {
+                if (collisionData.Y < 0)
                 {
                     _player.Velocity.Y = 0;
-                    _player.Position.Y = _platforms[i].Top - _player.Size.Y;
+                }
+                else
+                {
+                    _player.Velocity.Y = 0.1f;
                 }
             }
+
         }
+    }
+    private Vector2 GetCollisionData(Rectangle a, Rectangle b)
+    {
+        Vector2 result = Vector2.Zero;
+        if(a.Intersects(b))
+        {
+            Rectangle overlap = Rectangle.Intersect(a, b);
+            if(overlap.Width < overlap.Height)
+            {
+                int direction = a.Center.X <b.Center.X ? -overlap.Width : overlap.Width;
+                result.X = direction;
+            }
+            else
+            {
+                int direction = a.Center.Y < b.Center.Y ? -overlap.Height : overlap.Height;
+                result.Y = direction;
+            }
+        }
+        return result;
     }
 }
