@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using my_game;
-using System.Reflection.Metadata.Ecma335;
 
 namespace first_game;
 
@@ -23,7 +22,6 @@ public class Game1 : Game
     private Enemy _enemy;
     public Game1()
     {
-        
         _graphics = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
