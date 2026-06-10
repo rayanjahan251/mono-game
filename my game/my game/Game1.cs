@@ -151,7 +151,6 @@ public class Game1 : Game
 
         base.Draw(gameTime);
     }
-
     private void ResolveCollisions()
     {
         for (int i = 0; i < _platforms.Length; i++)
@@ -160,7 +159,8 @@ public class Game1 : Game
             if (collisionData == Vector2.Zero)
                 continue;
             _player.Position += collisionData;
-            if(collisionData.X != 0)
+            _player.Collider.Location = _player.Position.ToPoint();
+            if (collisionData.X != 0)
             {
                 _player.Velocity.X = 0;
             }
@@ -175,7 +175,6 @@ public class Game1 : Game
                     _player.Velocity.Y = 0.1f;
                 }
             }
-
         }
     }
     private Vector2 GetCollisionData(Rectangle a, Rectangle b)
