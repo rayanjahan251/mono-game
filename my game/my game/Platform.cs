@@ -7,6 +7,8 @@ public class Platform
     private Rectangle _collider;
     private Texture2D _texture;
 
+    public Rectangle Collider => _collider;
+
     public Platform(Vector2 position, Vector2 size)
     {
         _position = position;
@@ -18,6 +20,20 @@ public class Platform
     public void LoadContent(Texture2D texture)
     {
         _texture = texture;
+    }
+    public void Draw(SpriteBatch spriteBatch)
+    {
+        spriteBatch.Draw(
+            _texture,
+            _position,
+            new Rectangle(32, 64,512, 128),
+            Color.White,
+            0,
+            new Vector2(32, 46),
+            new Vector2(0.35f, 0.4f),
+            SpriteEffects.None,
+            0
+        );
     }
 }
 

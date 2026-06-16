@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|solutionrelative:my game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|solutionrelative:my game\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|solutionrelative:my game\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|solutionrelative:my game\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\content\\images\\screenshot_2026-06-03_092648-removebg-preview.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|solutionrelative:my game\\content\\images\\screenshot_2026-06-03_092648-removebg-preview.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{62CA43E1-7323-4CFF-B77E-DD1BB68725A7}|my game\\my game.csproj|c:\\users\\student\\documents\\github\\mono-game\\my game\\my game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,17 +34,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Game1.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Game1.cs",
               "RelativeDocumentMoniker": "my game\\Game1.cs",
-              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Game1.cs*",
-              "RelativeToolTip": "my game\\Game1.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALEAAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Game1.cs",
+              "RelativeToolTip": "my game\\Game1.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAkwA4AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T05:47:12.703Z",
               "IsPinned": true,
@@ -48,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Enemy.cs",
               "RelativeDocumentMoniker": "my game\\Enemy.cs",
               "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Enemy.cs",
               "RelativeToolTip": "my game\\Enemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAA1wBEAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-02T08:17:34.781Z",
               "IsPinned": true,
@@ -62,13 +66,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Platform.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Platform.cs",
               "RelativeDocumentMoniker": "my game\\Platform.cs",
-              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Platform.cs*",
-              "RelativeToolTip": "my game\\Platform.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Platform.cs",
+              "RelativeToolTip": "my game\\Platform.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwBwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-10T05:57:11.214Z",
               "IsPinned": true,
@@ -76,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Player.cs",
               "RelativeDocumentMoniker": "my game\\Player.cs",
               "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Player.cs",
               "RelativeToolTip": "my game\\Player.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAA7wCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-22T06:02:57.623Z",
               "IsPinned": true,
@@ -91,6 +95,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Screenshot_2026-06-03_092648-removebg-preview.png",
+              "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Content\\images\\Screenshot_2026-06-03_092648-removebg-preview.png",
+              "RelativeDocumentMoniker": "my game\\Content\\images\\Screenshot_2026-06-03_092648-removebg-preview.png",
+              "ToolTip": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Content\\images\\Screenshot_2026-06-03_092648-removebg-preview.png*",
+              "RelativeToolTip": "my game\\Content\\images\\Screenshot_2026-06-03_092648-removebg-preview.png*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-06-16T09:03:39.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Student\\Documents\\GitHub\\mono-game\\my game\\my game\\Program.cs",
               "RelativeDocumentMoniker": "my game\\Program.cs",
@@ -98,8 +114,7 @@
               "RelativeToolTip": "my game\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-05T07:46:08.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-05T07:46:08.036Z"
             }
           ]
         }
